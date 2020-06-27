@@ -10,11 +10,8 @@ Watermarker was built using the following wonderful packages:
 
 ## Install
 
-* Clone the repo and cd into the project
-
-* Install
 ```shell
-go install watermarker
+go get -u github.com/YoungMetroTrusted/watermarker
 ```
 
 ## Useage
