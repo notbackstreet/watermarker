@@ -15,7 +15,7 @@ limitations under the License.
 */
 package main
 
-import "watermarker/cmd"
+import "github.com/YoungMetroTrusted/watermarker/cmd"
 
 func main() {
 	cmd.Execute()
