@@ -8,6 +8,7 @@ import (
 
 var opacity float64
 var outFileName string
+var defaultOpacity = 0.25
 
 // imageCmd represents the image command
 var imageCmd = &cobra.Command{
@@ -24,6 +25,10 @@ var imageCmd = &cobra.Command{
 		if outFileName == "" {
 			outFileName = args[0]
 		}
+		if opacity > 1.0 || opacity < 0.0 {
+			fmt.Printf("Invalid opacity entered (opacity must be between 0.0 and 1.0), defaulting to %v ...\n", defaultOpacity)
+			opacity = defaultOpacity
+		}
 		if err := WatermarkImage(args[0], args[1], outFileName, opacity); err != nil {
 			fmt.Printf("Unable to watermark image, received the following error: %s", err.Error())
 		}
@@ -32,6 +37,6 @@ var imageCmd = &cobra.Command{
 
 func init() {
 	rootCmd.AddCommand(imageCmd)
-	imageCmd.Flags().Float64VarP(&opacity, "opacity", "o", 0.25, "Opacity can be used to overwrite the default opacity (0.25) of the image being used as the watermark. It expects a float between 0.0 and 1.0.")
+	imageCmd.Flags().Float64VarP(&opacity, "opacity", "o", defaultOpacity, fmt.Sprintf("Opacity can be used to overwrite the default opacity (%v) of the image being used as the watermark. It expects a float between 0.0 and 1.0.", defaultOpacity))
 	imageCmd.Flags().StringVarP(&outFileName, "name", "n", "", "Name can be used to output the watermarked image to a new file with the provided name.")
 }
