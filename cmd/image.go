@@ -32,7 +32,6 @@ var imageCmd = &cobra.Command{
 
 func init() {
 	rootCmd.AddCommand(imageCmd)
-	imageCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
 	imageCmd.Flags().Float64VarP(&opacity, "opacity", "o", 0.25, "Opacity can be used to overwrite the default opacity (0.25) of the image being used as the watermark. It expects a float between 0.0 and 1.0.")
 	imageCmd.Flags().StringVarP(&outFileName, "name", "n", "", "Name can be used to output the watermarked image to a new file with the provided name.")
 }
