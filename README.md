@@ -29,7 +29,8 @@ watermarker image -h
 watermarker bulk -h
 ```
 
-### Watermark a single image (will overwrite original image)
+### Watermark a single image
+Note: This will overwrite the original image
 ```shell
 watermarker image examples/example_image.jpg example_watermark.png
 ```
@@ -44,7 +45,8 @@ watermarker image examples/example_image.jpg example_watermark.png -o 0.35
 watermarker image examples/example_image.jpg example_watermark.png -o 0.35 -n new_image.jpg
 ```
 
-### Watermark all images in a folder (new images will be saved to a folder named "watermarked" in the current directory")
+### Watermark all images in a folder
+Note: New images will be saved to a folder named "watermarked" in the current directory
 ```shell
 watermarker bulk imageFolder/ example_watermark.png
 ```
