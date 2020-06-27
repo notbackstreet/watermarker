@@ -2,6 +2,7 @@ package cmd
 
 import (
 	"fmt"
+	"log"
 
 	"github.com/spf13/cobra"
 )
@@ -30,7 +31,7 @@ var imageCmd = &cobra.Command{
 			opacity = defaultOpacity
 		}
 		if err := WatermarkImage(args[0], args[1], outFileName, opacity); err != nil {
-			fmt.Printf("Unable to watermark image, received the following error: %s", err.Error())
+			log.Fatalf("Unable to watermark image, received the following error: %s", err.Error())
 		}
 	},
 }

@@ -2,6 +2,7 @@ package cmd
 
 import (
 	"fmt"
+	"log"
 
 	"github.com/spf13/cobra"
 )
@@ -28,7 +29,7 @@ var bulkCmd = &cobra.Command{
 			opacityBulk = defaultOpacityBulk
 		}
 		if err := BulkWatermark(args[0], args[1], outputFolder, opacityBulk); err != nil {
-			fmt.Printf("Unable to bulk watermark images in folder, received the following error: %s", err.Error())
+			log.Fatalf("Unable to bulk watermark images in folder, received the following error: %s", err.Error())
 		}
 	},
 }
