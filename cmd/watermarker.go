@@ -42,6 +42,8 @@ func WatermarkImage(originalFile, watermarkFile, outputFile string, opacity floa
 	return nil
 }
 
+// BulkWatermark searches for image files in `srcFolder` and watermarks them all by overlaying each one with the image
+// in `watermarkFile`, using the specified opacity. Watermarked images are then saved to `outputFolder`.
 func BulkWatermark(srcFolder, watermarkFile, outputFolder string, opacity float64) error {
 	// Open the image to use as the watermark
 	watermark, err := imaging.Open(watermarkFile)
