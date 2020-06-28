@@ -1,5 +1,5 @@
 # watermarker
-Simple CLI tool to watermark images. Built using Go.
+Simple CLI tool to watermark and overlay images. Built using Go.
 
 ## Special Thanks
 Watermarker was built using the following wonderful packages:
