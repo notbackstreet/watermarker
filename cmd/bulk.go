@@ -18,7 +18,7 @@ var bulkCmd = &cobra.Command{
 	Long: `The "bulk" command is used to watermark multiple images at once. It takes
 	two arguments, first a folder containing images to be watermarked, and second
 	an image to apply as the watermark. The level of opacity for the watermark image
-	can be overwritten with the "--opactiy" or "-o" flag. By default, the watermarked
+	can be overwritten with the "--opacity" or "-o" flag. By default, the watermarked
 	images will be saved in a new folder named "watermarked" within the current directory,
 	to override the "watermarked" folder name  use the "--name" or "-n" flag and
 	provide a name for the new folder.`,
@@ -36,6 +36,6 @@ var bulkCmd = &cobra.Command{
 
 func init() {
 	rootCmd.AddCommand(bulkCmd)
-	bulkCmd.Flags().Float64VarP(&opacityBulk, "opacity", "o", 0.25, fmt.Sprintf("Opacity can be used to overwrite the default opacity (%v) of the image being used as the watermark. It expects a float between 0.0 and 1.0.", defaultOpacityBulk))
+	bulkCmd.Flags().Float64VarP(&opacityBulk, "opacity", "o", defaultOpacityBulk, fmt.Sprintf("Opacity can be used to overwrite the default opacity (%v) of the image being used as the watermark. It expects a float between 0.0 and 1.0.", defaultOpacityBulk))
 	bulkCmd.Flags().StringVarP(&outputFolder, "name", "n", "watermarked/", "Name can be used to customize the name of the generated folder containing the new watermarked images.")
 }

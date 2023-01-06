@@ -18,7 +18,7 @@ var imageCmd = &cobra.Command{
 	Long: `The "image" command is used to watermark a single image. It takes
 	two image files as its arguments, and will overlay the second image over
 	the first image with the default opacity. The level of opacity can be specified with the
-	"--opactiy" or "-o" flag. By default, the first image file will be overwritten with
+	"--opacity" or "-o" flag. By default, the first image file will be overwritten with
 	the new "watermarked" image, to output to a new file use the "--name" or "-n" flag and
 	provide a name for the new file.`,
 	Args: cobra.ExactArgs(2),
